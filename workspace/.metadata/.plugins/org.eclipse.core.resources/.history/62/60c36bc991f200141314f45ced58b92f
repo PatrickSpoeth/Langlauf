@@ -1,0 +1,30 @@
+import uuid
+import datetime
+
+'''
+Created on 04.05.2015
+
+@author: Patrick Spoeth
+'''
+
+
+class cParticipant(object):
+    '''
+    classdocs
+    '''
+
+
+    def __init__(self, sFirstName="", sLastName="", sTeam=""):
+        '''
+        Constructor
+        '''
+        # eindeutige ID
+        self.__uuid = uuid.uuid4()
+        
+        self._firstName = sFirstName
+        self._lastName = sLastName
+        self._team = sTeam
+        
+        self._birthday = datetime.date()
+        
+    

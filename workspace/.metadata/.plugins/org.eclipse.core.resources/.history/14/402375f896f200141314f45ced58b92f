@@ -1,0 +1,69 @@
+import datetime
+import uuid
+
+'''
+Created on 04.05.2015
+
+@author: Patrick Spoeth
+'''
+
+
+class cParticipant(object):
+    '''
+    classdocs
+    '''
+
+    uuid = property(getUuid, None, None, None)
+    firstName = property(getFirstName, setFirstName, None, None)
+    lastName = property(getLastName, setLastName, None, None)
+    team = property(getTeam, setTeam, None, None)
+
+    def __init__(self, 
+                 sFirstName="", 
+                 sLastName="", 
+                 sTeam="", 
+                 iBirthYear=1900, 
+                 iBirthMonth=1, 
+                 iBirthDay=1
+                 ):
+        '''
+        Constructor
+        '''
+        
+        self.__uuid = uuid.uuid4()
+        
+        self.__firstName = sFirstName
+        self.__lastName = sLastName
+        self.__team = sTeam
+        self.birthday = datetime.date()
+
+    def getUuid(self):
+        return self.__uuid
+
+
+    def getFirstName(self):
+        return self.__firstName
+
+
+    def getLastName(self):
+        return self.__lastName
+
+
+    def getTeam(self):
+        return self.__team
+
+
+    def setFirstName(self, value):
+        self.__firstName = value
+
+
+    def setLastName(self, value):
+        self.__lastName = value
+
+
+    def setTeam(self, value):
+        self.__team = value
+    
+    
+        
+    
